@@ -92,10 +92,40 @@ alert(message);
 Cool, isn't it?
 `
 
+const tmpText =  `# Éditeur Markdown ✍️
+
+### Bienvenue dans votre éditeur de markdown en temps réel ! 🎉
+
+# Fonctionnalités
+- **Édition en temps réel** : Tapez à gauche, voyez le résultat à droite 👀
+- **Support GitHub Flavored Markdown** avec \`remark-gfm\` 🐙
+- **Interface intuitive** avec Tailwind CSS 🎨
+
+---
+
+## Exemple de code
+
+\`\`\`
+function hello() {
+  console.log("Hello, World!");
+}
+\`\`\`
+
+## Liste de tâches
+- [x] Créer l'éditeur 🛠️
+- [x] Ajouter le preview 👓
+- [ ] Ajouter plus de fonctionnalités ➕
+> Note : Ceci est un blockquote pour montrer les capacités de rendu. 📝
+
+---
+
+**Bon coding ! 🚀**
+`;
+
 export default function Main() {
 
 	const [theme, setTheme] = useState<"dark" | "light">("light");
-	const [text, setText] = useState<string>(testText);
+	const [text, setText] = useState<string>(tmpText);
 
 	useEffect(() => {
 		const theme = localStorage.getItem("theme");
