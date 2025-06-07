@@ -90,6 +90,10 @@ export default function Main() {
 		localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
 		document.documentElement.classList.toggle("dark", theme === "dark");
 	}
+	
+	const handleDelete = () => {
+		setText("");
+	}
 
 	const handleCopy = () => {
 		navigator.clipboard.writeText(text);
@@ -102,8 +106,15 @@ export default function Main() {
 			.catch(() => toast.error("Impossible de coller le texte. Vérifiez que vous avez bien autorisé l'accès au presse-papiers."));
 	}
 
-	const handleDelete = () => {
-		setText("");
+	const handleDownload = () => {
+		const blob = new Blob([text], { type: "text/markdown" });
+		const url = URL.createObjectURL(blob);
+		const a = document.createElement("a");
+		a.href = url;
+		a.download = "markdown.md";
+		a.click();
+		URL.revokeObjectURL(url);
+		toast.success("Téléchargé avec succès !");
 	}
 
 	return (
@@ -115,6 +126,7 @@ export default function Main() {
 							<i className="fa-solid fa-trash fa-lg dark:text-white cursor-pointer" onClick={handleDelete}></i>
 							<i className="fa-solid fa-copy fa-lg dark:text-white cursor-pointer" onClick={handleCopy}></i>
 							<i className="fa-solid fa-clipboard fa-lg dark:text-white cursor-pointer" onClick={handlePaste}></i>
+							<i className="fa-solid fa-download fa-lg dark:text-white cursor-pointer" onClick={handleDownload}></i>
 						</div>
 
 						<span className="col-span-1 text-center text-lg text-black dark:text-white font-bold">Markdown Live Editor</span>
