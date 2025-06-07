@@ -108,8 +108,8 @@ export default function Main() {
 
 	return (
 		<div className="flex items-center justify-center h-screen p-4 dark:bg-dark">
-			<div className="w-full h-full rounded-lg border-4 border-gray-300 dark:border-black overflow-hidden flex flex-col">
-				<nav className="flex flex-row justify-between items-center p-4 bg-gray-300 dark:bg-black flex-shrink-0">
+			<div className="w-full h-full rounded-lg border-4 border-gray-200 dark:border-black overflow-hidden flex flex-col">
+				<nav className="flex flex-row justify-between items-center p-4 bg-gray-200 dark:bg-black flex-shrink-0">
 					<div className="grid grid-cols-3 w-full">
 						<div className="col-span-1 flex flex-row items-center gap-4">
 							<i className="fa-solid fa-trash fa-lg dark:text-white cursor-pointer" onClick={handleDelete}></i>
@@ -128,7 +128,7 @@ export default function Main() {
 					</div>
 				</nav>
 
-				<div className="grid grid-cols-2 flex-1 divide-x-4 divide-gray-300 dark:divide-black overflow-hidden">
+				<div className="grid grid-cols-2 flex-1 divide-x-4 divide-gray-200 dark:divide-black overflow-hidden">
 					<div className="col-span-1 h-full overflow-hidden">
 						<Editor
 							height="100%"
@@ -139,7 +139,12 @@ export default function Main() {
 							options={{ automaticLayout: true, minimap: { enabled: false } }}
 						/>
 					</div>
-					<div className="col-span-1 bg-white dark:bg-neutral-800 h-full overflow-auto">
+					<div className="col-span-1 bg-white dark:bg-neutral-800 h-full overflow-auto
+					[&::-webkit-scrollbar]:w-2
+					[&::-webkit-scrollbar-track]:bg-transparent
+				[&::-webkit-scrollbar-thumb]:bg-gray-300
+				dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700"
+					>
 						<article className="prose prose-sm md:prose lg:prose-lg dark:prose-invert max-w-none p-6">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {text || ""}
