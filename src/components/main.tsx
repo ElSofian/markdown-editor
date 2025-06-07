@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm';
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-const testText = `# Markdown syntax guide
+const defaultText = `# Markdown syntax guide
 
 ---
 
@@ -92,40 +92,10 @@ alert(message);
 Cool, isn't it?
 `
 
-const tmpText =  `# Éditeur Markdown ✍️
-
-### Bienvenue dans votre éditeur de markdown en temps réel ! 🎉
-
-# Fonctionnalités
-- **Édition en temps réel** : Tapez à gauche, voyez le résultat à droite 👀
-- **Support GitHub Flavored Markdown** avec \`remark-gfm\` 🐙
-- **Interface intuitive** avec Tailwind CSS 🎨
-
----
-
-## Exemple de code
-
-\`\`\`
-function hello() {
-  console.log("Hello, World!");
-}
-\`\`\`
-
-## Liste de tâches
-- [x] Créer l'éditeur 🛠️
-- [x] Ajouter le preview 👓
-- [ ] Ajouter plus de fonctionnalités ➕
-> Note : Ceci est un blockquote pour montrer les capacités de rendu. 📝
-
----
-
-**Bon coding ! 🚀**
-`;
-
 export default function Main() {
 
 	const [theme, setTheme] = useState<"dark" | "light">("light");
-	const [text, setText] = useState<string>(tmpText);
+	const [text, setText] = useState<string>(defaultText);
 
 	useEffect(() => {
 		const theme = localStorage.getItem("theme");
