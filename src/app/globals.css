@@ -13,12 +13,12 @@
   --foreground: #ffffff;
 }
 
-.prose h1 {
-  @apply text-2xl font-bold mt-6 mb-4;
+*:first-child {
+  @apply !mt-0;
 }
 
-.prose h1:first-child {
-  @apply mt-0;
+.prose h1 {
+  @apply text-2xl font-bold mt-6 mb-4;
 }
 
 .prose h2 {
