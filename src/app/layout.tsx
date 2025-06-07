@@ -3,8 +3,8 @@ import { ToastContainer } from "react-toastify";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Markdown Editor",
-  description: "Markdown Editor is a website where you can edit your markdown files.",
+  title: "Markdown Live Editor",
+  description: "Markdown Live Editor is a website where you can edit your markdown files.",
 };
 
 export default function RootLayout({
