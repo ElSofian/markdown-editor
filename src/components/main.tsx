@@ -141,10 +141,10 @@ export default function Main() {
 				<nav className="flex flex-row justify-between items-center p-4 bg-gray-200 dark:bg-black flex-shrink-0">
 					<div className="grid grid-cols-3 w-full">
 						<div className="col-span-1 flex flex-row items-center gap-4">
-							<i className="fa-solid fa-trash fa-lg dark:text-white cursor-pointer" onClick={handleDelete}></i>
-							<i className="fa-solid fa-copy fa-lg dark:text-white cursor-pointer" onClick={handleCopy}></i>
-							<i className="fa-solid fa-clipboard fa-lg dark:text-white cursor-pointer" onClick={handlePaste}></i>
-							<i className="fa-solid fa-download fa-lg dark:text-white cursor-pointer" onClick={handleDownload}></i>
+							<i className="fa-regular fa-trash fa-lg dark:text-white cursor-pointer" onClick={handleDelete}></i>
+							<i className="fa-regular fa-copy fa-lg dark:text-white cursor-pointer" onClick={handleCopy}></i>
+							<i className="fa-regular fa-clipboard fa-lg dark:text-white cursor-pointer" onClick={handlePaste}></i>
+							<i className="fa-regular fa-download fa-lg dark:text-white cursor-pointer" onClick={handleDownload}></i>
 						</div>
 
 						<span className="col-span-1 text-center text-lg text-black dark:text-white font-bold">Markdown Live Editor</span>
